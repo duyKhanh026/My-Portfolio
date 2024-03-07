@@ -72,6 +72,91 @@
 			width: 0%;
 		}
 	}
+	.custom-list {
+	  	list-style: none; /* Loại bỏ chấm đầu dòng mặc định */
+	  	padding-left: 20px; /* Để tạo khoảng cách giữa hình ảnh và văn bản */
+	}
+
+	.custom-list li {
+	  	padding-left: 30px; /* Khoảng cách giữa hình ảnh và văn bản */
+	  	margin-bottom: 10px; /* Khoảng cách giữa các mục danh sách */
+	}
+
+	.custom-list li.item1 {
+	  	background-image: url('img/icons8-java-188.png'); /* Đường dẫn đến hình ảnh cho mục 1 */
+	  	background-repeat: no-repeat; /* Không lặp lại hình ảnh */
+	  	background-position: 0 50%; /* Đặt vị trí của hình ảnh */
+  		background-size: 24px; /* Cố định kích thước của hình ảnh */
+	}
+
+	.custom-list li.item2 {
+	  	background-image: url('img/icons8-unity-50.png'); /* Đường dẫn đến hình ảnh cho mục 2 */
+	  	background-repeat: no-repeat; /* Không lặp lại hình ảnh */
+	  	background-position: 0 50%; /* Đặt vị trí của hình ảnh */
+  		background-size: 24px; /* Cố định kích thước của hình ảnh */
+	}
+
+	.custom-list li.item3 {
+	  	background-image: url('img/icons8-html5-96.png'); /* Đường dẫn đến hình ảnh cho mục 3 */
+	  	background-repeat: no-repeat; /* Không lặp lại hình ảnh */
+  		background-position: 0 50%; /* Đặt vị trí của hình ảnh */
+  		background-size: 24px; /* Cố định kích thước của hình ảnh */
+	}
+	.custom-list li.item4 {
+	  	background-image: url('img/icons8-database-100.png'); /* Đường dẫn đến hình ảnh cho mục 3 */
+	  	background-repeat: no-repeat; /* Không lặp lại hình ảnh */
+  		background-position: 0 50%; /* Đặt vị trí của hình ảnh */
+  		background-size: 24px; /* Cố định kích thước của hình ảnh */
+	}
+	.custom-list li.item5 {
+	  	background-image: url('img/icons8-github-50.png'); /* Đường dẫn đến hình ảnh cho mục 3 */
+	  	background-repeat: no-repeat; /* Không lặp lại hình ảnh */
+  		background-position: 0 50%; /* Đặt vị trí của hình ảnh */
+  		background-size: 24px; /* Cố định kích thước của hình ảnh */
+	}
+	.custom-list li.item6 {
+	  	background-image: url('img/icons8-problem-64.png'); /* Đường dẫn đến hình ảnh cho mục 3 */
+	  	background-repeat: no-repeat; /* Không lặp lại hình ảnh */
+  		background-position: 0 50%; /* Đặt vị trí của hình ảnh */
+  		background-size: 24px; /* Cố định kích thước của hình ảnh */
+	}
+	.custom-list li.item7 {
+	  	background-image: url('img/icons8-learning-64.png'); /* Đường dẫn đến hình ảnh cho mục 3 */
+	  	background-repeat: no-repeat; /* Không lặp lại hình ảnh */
+  		background-position: 0 50%; /* Đặt vị trí của hình ảnh */
+  		background-size: 24px; /* Cố định kích thước của hình ảnh */
+	}
+
+.wave {
+    position: fixed;
+    opacity: 0.3;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, #76c8e8, #4ab4c3); /* Màu nền sóng */
+}
+
+.wave:before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: 50%;
+    background: radial-gradient(circle, transparent 20%, #76c8e8 30%); /* Màu sóng */
+    border-radius: 50%;
+    animation: wave 2s linear infinite;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes wave {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
 </style>
 </head>
 <body>
@@ -95,16 +180,15 @@
         </div>
         <div class="div2">
         	
-    		<h2><strong>My Skills</strong></h2>
-            <p><strong>Here are some of my skills:</strong></p>
-            <ul>
-                <li><strong>Advanced Java:</strong> I have a strong command of Java programming language, including advanced concepts such as multithreading, networking, and GUI programming.</li>
-                <li><strong>Basic Unity:</strong> I have basic knowledge of Unity game development platform, including game object manipulation, basic scripting, and scene creation.</li>
-                <li><strong>Web Development:</strong> I am proficient in HTML, CSS, and JavaScript, and have experience building responsive and interactive websites.</li>
-                <li><strong>Database Management:</strong> I have experience working with SQL databases, including MySQL and PostgreSQL.</li>
-                <li><strong>Version Control:</strong> I am familiar with Git and GitHub, and use version control for managing my projects.</li>
-                <li><strong>Problem Solving:</strong> I have strong problem-solving skills and enjoy tackling challenging programming problems.</li>
-                <li><strong>Continuous Learning:</strong> I am committed to continuous learning and staying updated with the latest technologies and trends in the field of programming.</li>
+    		<h2>My Skills <img src="img/icons8-skills-64.png" width="32" style="padding-top: 5px;"></h2>
+            <ul class="custom-list">
+                <li class="item1"><strong>Advanced Java:</strong> I have a strong command of Java programming language, including advanced concepts such as multithreading, networking, and GUI programming.</li>
+                <li class="item2"><strong>Basic Unity:</strong> I have basic knowledge of Unity game development platform, including game object manipulation, basic scripting, and scene creation.</li>
+                <li class="item3"><strong>Web Development:</strong> I am proficient in HTML, CSS, and JavaScript, and have experience building responsive and interactive websites.</li>
+                <li class="item4"><strong>Database Management:</strong> I have experience working with SQL databases, including MySQL and PostgreSQL.</li>
+                <li class="item5"><strong>Version Control:</strong> I am familiar with Git and GitHub, and use version control for managing my projects.</li>
+                <li class="item6"><strong>Problem Solving:</strong> I have strong problem-solving skills and enjoy tackling challenging programming problems.</li>
+                <li class="item7"><strong>Continuous Learning:</strong> I am committed to continuous learning and staying updated with the latest technologies and trends in the field of programming.</li>
             </ul>
             <p>These skills have been developed through self-study, projects, and practical experience.</p>
         	<p><strong>Here are my project:</strong> </p>
@@ -115,5 +199,7 @@
     		
         </div>
     </div>
+
+    <div class="wave"></div>
 </body>
 </html>
