@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trần Khánh Duy</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<title>Trần Khánh Duy</title>
 <style>
 	body {
 		-webkit-user-select: none; /* Safari */
 		-moz-user-select: none; /* Firefox */
 		-ms-user-select: none; /* IE 10+ */
 		user-select: none; /* Standard syntax */
-		 font-family: Monospace, sans-serif;
+		font-family: Monospace, sans-serif;
+		background-image: url('scripts/wave.svg'); /* Đường dẫn đến file SVG */
+    	background-size: cover; /* Để đảm bảo rằng hình ảnh phủ hết kích thước của cửa sổ trình duyệt */
+    	background-position: center; /* Căn giữa hình ảnh */
+    	background-repeat: no-repeat; /* Không lặp lại hình ảnh */
+    	background-attachment: fixed;
 	}
     .container {
         position: relative;
@@ -126,36 +132,17 @@
   		background-position: 0 50%; /* Đặt vị trí của hình ảnh */
   		background-size: 24px; /* Cố định kích thước của hình ảnh */
 	}
+	.chart-container {
+	    width: 80%;
+	    margin: 50px auto;
+	}
 
-.wave {
-    position: fixed;
-    opacity: 0.3;
-    width: 100%;
-    height: 200px;
-    background: linear-gradient(to bottom, #76c8e8, #4ab4c3); /* Màu nền sóng */
-}
+	canvas {
+	    border: 1px solid #ddd;
+	}
+	.svgclss {
 
-.wave:before {
-    content: '';
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: 50%;
-    background: radial-gradient(circle, transparent 20%, #76c8e8 30%); /* Màu sóng */
-    border-radius: 50%;
-    animation: wave 2s linear infinite;
-    transform: translate(-50%, -50%);
-}
-
-@keyframes wave {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
+	}
 
 </style>
 </head>
@@ -196,10 +183,12 @@
         		<!-- Sử dụng thẻ <img> để chèn icon Facebook -->
         		<img src="img/course.png" alt="Course" width="100%">
     		</a>
-    		
+    		<div class="chart-container">
+	        	<canvas id="crypto-chart"></canvas>
+    		</div>
         </div>
     </div>
+    <script src="scripts/script.js"></script>
 
-    <div class="wave"></div>
 </body>
 </html>
